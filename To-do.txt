@@ -1,9 +1,0 @@
-1. Vytvoření databaze
-2. Server kde bude databaze 24/7
-3. SignUp / Login
-4. Téma Webovky
-5. Co pouzit ???
-6. Rozdelení prace
-
-¬ Filip
-

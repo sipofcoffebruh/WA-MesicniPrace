@@ -22,6 +22,7 @@ function Login() {
   return (
     <div className="App">
       <div className="App-header">
+        <title>kokot</title>
         <Auth
           supabaseClient={supabase}
           providers={["discord", "google"]}

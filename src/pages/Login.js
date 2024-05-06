@@ -24,7 +24,7 @@ function Login() {
       <div className="App-header">
         <Auth
           supabaseClient={supabase}
-          providers={["discord"]}
+          providers={["discord", "google"]}
           theme="dark"
           appearance={{ theme: ThemeSupa }}
         />

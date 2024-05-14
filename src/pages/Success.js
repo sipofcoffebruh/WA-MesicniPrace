@@ -9,6 +9,12 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltaHBidGFoaWV5bHBwdnhta3VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzAyMTYsImV4cCI6MjAzMDMwNjIxNn0.pkiubXD_EW39TgtK0Luaje1re352g2I_X1Xfb42w4KI"
 );
 
+function PageTitle() {
+  useEffect(() => {
+    document.title = 'skibidi reality';
+  }, []);
+}
+
 function Success() {
   const [user, setUser] = useState({});
   const navigate = useNavigate();

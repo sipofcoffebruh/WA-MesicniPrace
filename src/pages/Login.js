@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "aos/dist/aos.css";
 import "glightbox/dist/css/glightbox.min.css";
-import CarouselComponent from "../pages/CarouselComponent.js";
 import houseImage from "../pages/house.jpg";
 import { Application } from "@splinetool/runtime";
 
@@ -22,7 +21,19 @@ function Login() {
   useEffect(() => {
     const canvas = document.getElementById("canvas3d");
     const app = new Application(canvas);
-    app.load("https://prod.spline.design/tupS-Y7XaLkGuCmK/scene.splinecode");
+    app.load("https://prod.spline.design/lwbNy0C3mohnVGAZ/scene.splinecode");
+  }, []);
+
+  useEffect(() => {
+    const canvas = document.getElementById("canvas");
+    const app = new Application(canvas);
+    app.load("https://prod.spline.design/5Fpkl6VmMNsEmMPy/scene.splinecode");
+  }, []);
+
+  useEffect(() => {
+    const canvas4d = document.getElementById("canvas4d");
+    const app = new Application(canvas4d);
+    app.load("https://prod.spline.design/aIo3AYMboAmTmIOI/scene.splinecode");
   }, []);
 
   useEffect(() => {
@@ -40,66 +51,60 @@ function Login() {
   }, [navigate]);
 
   const background = {
-    background: "rgb(0,0,0)",
+    background: "rgb(235,243,232)",
     background:
-      "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(42,29,43,1) 61%, rgba(46,12,41,1) 100%, rgba(85,8,73,1) 100%)",
+      "radial-gradient(circle, rgba(235,243,232,1) 0%, rgba(175,200,173,1) 47%, rgba(238,231,218,1) 60%, rgba(235,243,232,1) 100%)",
   };
 
   return (
     <div className="App" style={background}>
       <div className="App-header">
         <title>Realitky</title>
-        <div
-          className="container-fluid"
-          style={{
-            backgroundImage: { houseImage },
-            height: "100vh",
-          }}
-        >
-          <ul className="nav nav-tabs">
-            <li className="nav-item">
-              <a className="nav-link active" href="#">
-                Logo
+
+        <div className="container-fluid">
+          <ul className="nav nav-tabs justify-content-center  bg-white ">
+            <a className="nav-link active" href="#">
+              Logo
+            </a>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                Home
               </a>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-              >
-                Dropdown
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Features
               </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#sluzby">
-                    sluzby
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#prodej">
-                    prodej
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#imgslider">
-                    imgslider
-                  </a>
-                </li>
-              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Pricing
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Disabled
+              </a>
             </li>
           </ul>
+
+          <div className="row" style={{ height: "1000px" }}>
+            <canvas
+              id="canvas3d"
+              style={{ width: "300px", height: "200" }}
+            ></canvas>
+          </div>
         </div>
-        <div className="container-fluid text-white">
+        <div className="container-fluid">
           {/* Hlavicka */}
           <section className="pt-5">
-            <div className="container-fluid">
+            <div className="container-fluid  bg-white bg-opacity-25 rounded-4">
               <div className="row gy-4">
                 <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                   <h1 className="p-5">
                     Better Solutions For <br /> Your Business
                   </h1>
-                  <h3 className="p-5 text-muted">
+                  <h3 className="p-5">
                     We are team of talented designers making websites with
                     Bootstrap
                   </h3>
@@ -113,28 +118,28 @@ function Login() {
 
           {/* Nase Sluzby */}
           <section>
-            <div className="container mb-5">
+            <div className="container-fluid mb-5 bg-white bg-opacity-25 rounded-4">
               <div className="row d-flex flex-row justify-content-center mt-5 mb-5">
-                <h2 id="sluzby" className="display-4 p-3 mt-5 mb-5">
-                  Nase služby
+                <h2 id="sluzby" className="display-5 text-center p-3 mt-5 mb-5">
+                  Naše služby
                 </h2>
                 {["prodej nemovitosti", "poradenství", "koupě nemovitosti"].map(
                   (title, index) => (
-                    <div className="col-sm-4 p-4" key={index}>
-                      <div className="card">
+                    <div className="col-sm-3 p-5" key={index}>
+                      <div className="card h-100 shadow-sm mb-5 pb-5">
                         <img
-                          className="card-img-top"
+                          className="card-img-top mx-auto pt-3"
                           src={houseImage}
                           alt="Card"
-                          style={{ width: "100%" }}
+                          style={{ width: "70%", borderRadius: "10px" }} // Adjust the width to make the image smaller
                         />
-                        <div className="card-body">
-                          <h4 className="card-title p-2 m-4">{title}</h4>
-                          <p className="card-text p-2 m-4">
+                        <div className="card-body text-center">
+                          <h4 className="card-title mt-3">{title}</h4>
+                          <p className="card-text mt-3">
                             Some example text some example text. John Doe is an
-                            architect and engineer
+                            architect and engineer.
                           </p>
-                          <a href="#" className="btn btn-primary p-2 m-4">
+                          <a href="#" className="btn btn-primary mt-4">
                             See Profile
                           </a>
                         </div>
@@ -148,7 +153,10 @@ function Login() {
 
           {/* Prodej Section */}
           <section id="prodej">
-            <div className="container-fluid mt-5">
+            <div
+              className="container-fluid mt-5  bg-white bg-opacity-25 rounded-4"
+              style={{ height: "100vh" }}
+            >
               <div className="row mt-5">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-5">
@@ -157,15 +165,27 @@ function Login() {
                     <br />
                     nemovitost??
                   </h2>
+                  <p>
+                    Naše zkušenosti a odborné znalosti v oblasti realit vám
+                    pomohou dosáhnout nejlepší možné ceny za vaši nemovitost.
+                    Zajišťujeme komplexní služby včetně:
+                  </p>
                   <p className="p-2 m-5">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Numquam cupiditate consequatur molestiae ea dolor saepe at
-                    labore libero doloribus blanditiis dolorem, ab quia alias,
-                    quidem assumenda ut perferendis iure. Repellendus?Lorem,
-                    ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
-                    voluptas veniam et incidunt nesciunt similique, dicta ullam
-                    eum laudantium mollitia, accusantium saepe distinctio magnam
-                    dolor! Distinctio quis unde dolorum hic!
+                    <ul>
+                      <li>Profesionální ocenění vaší nemovitosti</li>
+                      <li>Marketing a propagace na různých platformách</li>
+                      <li>Právní poradenství a administrativní podpora</li>
+                      <li>Jednání s potenciálními kupci</li>
+                      <li>
+                        Vyřizování veškerých formalit spojených s prodejem
+                      </li>
+                    </ul>
+                  </p>
+                  <p>
+                    Chápeme, že prodej nemovitosti je významný krok, a jsme tu,
+                    abychom zajistili, že vše proběhne hladce a bez stresu.
+                    Kontaktujte nás ještě dnes a začněte svou cestu k úspěšnému
+                    prodeji vaší nemovitosti.
                   </p>
                   <button
                     type="button"
@@ -175,18 +195,24 @@ function Login() {
                   </button>
                 </div>
                 <div className="col-sm-6">
-                  <canvas id="canvas3d" style={{ width: "100%" }}></canvas>
+                  <canvas
+                    id="canvas"
+                    style={{ width: "300px", height: "200" }}
+                  ></canvas>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Img Slider Section */}
-          <section className=" mt-5" id="imgslider">
-            <div className="container-fluid pb-5">
-              <div className="row">
+          <section className="mt-5" id="imgslider">
+            <div
+              className="container-fluid pb-5 bg-white bg-opacity-25 rounded-4 d-flex align-items-center"
+              style={{ height: "1000px" }}
+            >
+              <div className="row w-100">
                 <div className="col-sm-1"></div>
-                <div className="col-sm-5 pt-5">
+                <div className="col-sm-5 pt-5 d-flex flex-column justify-content-center">
                   <h2>Nadpis 1</h2>
                   <h2>Nadpis 2</h2>
                   <h2>Nadpis 3</h2>
@@ -206,15 +232,18 @@ function Login() {
                     <br /> Officia hic quibusdam, nisi voluptates aut ver
                   </p>
                 </div>
-                <div className="col-sm-6">
-                  <CarouselComponent />
+                <div className="col-sm-6 d-flex align-items-center justify-content-center">
+                  <canvas
+                    id="canvas4d"
+                    style={{ width: "100%", maxWidth: "600px", height: "auto" }}
+                  ></canvas>
                 </div>
               </div>
             </div>
           </section>
 
           <section>
-            <div className="container-fluid mt-5">
+            <div className="container-fluid mt-5  bg-white bg-opacity-25 rounded-4">
               <div className="row mt-5">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-6">
@@ -247,7 +276,7 @@ function Login() {
             </div>
           </section>
           <section>
-            <div className="container mt-5">
+            <div className="container mt-5  bg-white bg-opacity-25 rounded-4">
               <Auth
                 supabaseClient={supabase}
                 providers={["discord", "google"]}

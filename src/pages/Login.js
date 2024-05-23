@@ -19,18 +19,6 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const canvas = document.getElementById("canvas3d");
-    const app = new Application(canvas);
-    app.load("https://prod.spline.design/lwbNy0C3mohnVGAZ/scene.splinecode");
-  }, []);
-
-  useEffect(() => {
-    const canvas = document.getElementById("canvas");
-    const app = new Application(canvas);
-    app.load("https://prod.spline.design/5Fpkl6VmMNsEmMPy/scene.splinecode");
-  }, []);
-
-  useEffect(() => {
     const canvas4d = document.getElementById("canvas4d");
     const app = new Application(canvas4d);
     app.load("https://prod.spline.design/aIo3AYMboAmTmIOI/scene.splinecode");
@@ -66,34 +54,29 @@ function Login() {
             <a className="nav-link active" href="#">
               Logo
             </a>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">
+            <li className="nav-item active">
+              <a className="nav-link" href="#">
                 Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Features
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Pricing
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Disabled
               </a>
             </li>
           </ul>
 
-          <div className="row" style={{ height: "1000px" }}>
-            <canvas
-              id="canvas3d"
-              style={{ width: "300px", height: "200" }}
-            ></canvas>
-          </div>
+          <div className="row" style={{ height: "1000px" }}></div>
         </div>
         <div className="container-fluid">
           {/* Hlavicka */}
@@ -196,7 +179,7 @@ function Login() {
                 </div>
                 <div className="col-sm-6">
                   <canvas
-                    id="canvas"
+                    id="canvas4d"
                     style={{ width: "300px", height: "200" }}
                   ></canvas>
                 </div>

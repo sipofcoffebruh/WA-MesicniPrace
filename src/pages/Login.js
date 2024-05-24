@@ -18,34 +18,32 @@ const supabase = createClient(
 function Login() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const canvas4d = document.getElementById("canvas4d");
-    const app = new Application(canvas4d);
-    app.load("https://prod.spline.design/aIo3AYMboAmTmIOI/scene.splinecode");
-  }, []);
-
-  useEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange((event) => {
-      if (event === "SIGNED_IN") {
-        navigate("/success");
-      } else {
-        navigate("/");
-      }
-    });
-
-    return () => {
-      authListener?.subscription?.unsubscribe();
-    };
-  }, [navigate]);
-
   const background = {
     background: "rgb(235,243,232)",
     background:
       "radial-gradient(circle, rgba(235,243,232,1) 0%, rgba(175,200,173,1) 47%, rgba(238,231,218,1) 60%, rgba(235,243,232,1) 100%)",
   };
 
+  useEffect(() => {
+    const canvas4d = document.getElementById("canvas4d");
+    const app = new Application(canvas4d);
+    app.load("https://prod.spline.design/aIo3AYMboAmTmIOI/scene.splinecode");
+
+    const handleResize = () => {
+      canvas4d.style.width = "100%";
+      canvas4d.style.height = "100%";
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial call to set the canvas size
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="App" style={background}>
+    <div className="App">
       <div className="App-header">
         <title>Realitky</title>
 
@@ -136,10 +134,7 @@ function Login() {
 
           {/* Prodej Section */}
           <section id="prodej">
-            <div
-              className="container-fluid mt-5  bg-white bg-opacity-25 rounded-4"
-              style={{ height: "100vh" }}
-            >
+            <div className="container-fluid mt-5  bg-white bg-opacity-25 rounded-4">
               <div className="row mt-5">
                 <div className="col-sm-1"></div>
                 <div className="col-sm-5">
@@ -178,10 +173,13 @@ function Login() {
                   </button>
                 </div>
                 <div className="col-sm-6">
-                  <canvas
-                    id="canvas4d"
-                    style={{ width: "300px", height: "200" }}
-                  ></canvas>
+                  <div
+                    style={{
+                      height: "100px",
+                      width: "100px",
+                      backgroundColor: "red",
+                    }}
+                  ></div>
                 </div>
               </div>
             </div>
@@ -189,9 +187,16 @@ function Login() {
 
           {/* Img Slider Section */}
           <section className="mt-5" id="imgslider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path
+                fill="#273036"
+                fill-opacity="0.8"
+                d="M0,224L120,234.7C240,245,480,267,720,272C960,277,1200,267,1320,261.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+              ></path>
+            </svg>
             <div
               className="container-fluid pb-5 bg-white bg-opacity-25 rounded-4 d-flex align-items-center"
-              style={{ height: "1000px" }}
+              style={{ bg: "#273036" }}
             >
               <div className="row w-100">
                 <div className="col-sm-1"></div>
@@ -215,10 +220,18 @@ function Login() {
                     <br /> Officia hic quibusdam, nisi voluptates aut ver
                   </p>
                 </div>
-                <div className="col-sm-6 d-flex align-items-center justify-content-center">
+                <div
+                  className="col-sm-6 d-flex align-items-center justify-content-center"
+                  style={{ minWidth: "50%" }}
+                >
                   <canvas
                     id="canvas4d"
-                    style={{ width: "100%", maxWidth: "600px", height: "auto" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      maxHeight: "800px",
+                      minHeight: "700px",
+                    }}
                   ></canvas>
                 </div>
               </div>
@@ -229,9 +242,7 @@ function Login() {
             <div className="container-fluid mt-5  bg-white bg-opacity-25 rounded-4">
               <div className="row mt-5">
                 <div className="col-sm-1"></div>
-                <div className="col-sm-6">
-                  <img src={houseImage} className="img-fluid p-5" alt="House" />
-                </div>
+                <div className="col-sm-6"></div>
                 <div className="col-sm-5">
                   <h2 className="display-5 m-5">
                     Chcete prodat svou

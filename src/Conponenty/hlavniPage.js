@@ -26,25 +26,28 @@ const Hlavni = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
-      {/* Hlavicka */}
-      <section className="pt-5">
-        <div className="container-fluid  bg-white bg-opacity-25 rounded-4">
-          <div className="row gy-4">
-            <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1 className="p-5">
-                Better Solutions For <br /> Your Business
-              </h1>
-              <h3 className="p-5">
-                We are team of talented designers making websites with Bootstrap
-              </h3>
-            </div>
-            <div className="col-lg-6 order-1 order-lg-2 hero-img">
-              <img src={houseImage} alt="House" className="img-fluid p-5" />
+    <>
+      <div className="container-fluid">
+        {/* Hlavicka */}
+        <section className="pt-5">
+          <div className="container-fluid  bg-white bg-opacity-25 rounded-4">
+            <div className="row gy-4">
+              <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <h1 className="p-5">
+                  Better Solutions For <br /> Your Business
+                </h1>
+                <h3 className="p-5">
+                  We are team of talented designers making websites with
+                  Bootstrap
+                </h3>
+              </div>
+              <div className="col-lg-6 order-1 order-lg-2 hero-img">
+                <img src={houseImage} alt="House" className="img-fluid p-5" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Nase Sluzby */}
       <section>
@@ -61,7 +64,10 @@ const Hlavni = () => {
                       className="card-img-top mx-auto pt-3"
                       src={houseImage}
                       alt="Card"
-                      style={{ width: "70%", borderRadius: "10px" }} // Adjust the width to make the image smaller
+                      style={{
+                        width: "70%",
+                        borderRadius: "10px",
+                      }} // Adjust the width to make the image smaller
                     />
                     <div className="card-body text-center">
                       <h4 className="card-title mt-3">{title}</h4>
@@ -82,7 +88,14 @@ const Hlavni = () => {
       </section>
 
       {/* Prodej Section */}
-      <section id="prodej">
+      <section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#0099ff"
+            fill-opacity="1"
+            d="M0,288L48,256C96,224,192,160,288,144C384,128,480,160,576,181.3C672,203,768,213,864,208C960,203,1056,181,1152,197.3C1248,213,1344,267,1392,293.3L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
         <div className="container-fluid mt-5  bg-white bg-opacity-25 rounded-4">
           <div className="row mt-5">
             <div className="col-sm-1"></div>
@@ -127,24 +140,37 @@ const Hlavni = () => {
             </div>
           </div>
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#0099ff"
+            fill-opacity="1"
+            d="M0,288L48,256C96,224,192,160,288,144C384,128,480,160,576,181.3C672,203,768,213,864,208C960,203,1056,181,1152,197.3C1248,213,1344,267,1392,293.3L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+        </svg>
       </section>
 
       {/* Img Slider Section */}
       <section className="mt-5">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
-            fill="#273036"
-            fill-opacity="0.8"
+            fill="#686D76"
+            fill-opacity="1"
             d="M0,224L120,234.7C240,245,480,267,720,272C960,277,1200,267,1320,261.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
           ></path>
         </svg>
         <div
-          className="container-fluid pb-5 bg-white bg-opacity-25 rounded-4 d-flex align-items-center"
-          style={{ bg: "#273036" }}
+          className="container-fluid  bg-opacity-25 d-flex align-items-center text-white"
+          style={{ backgroundColor: "#686D76" }}
         >
           <div className="row w-100">
-            <div className="col-sm-1"></div>
-            <div className="col-sm-5 pt-5 d-flex flex-column justify-content-center">
+            <div
+              className="col-sm-1"
+              style={{ backgroundColor: "#686D76" }}
+            ></div>
+            <div
+              className="col-sm-5 pt-5 d-flex flex-column justify-content-center"
+              style={{ backgroundColor: "#686D76" }}
+            >
               <h2>Nadpis 1</h2>
               <h2>Nadpis 2</h2>
               <h2>Nadpis 3</h2>
@@ -165,7 +191,7 @@ const Hlavni = () => {
             </div>
             <div
               className="col-sm-6 d-flex align-items-center justify-content-center"
-              style={{ minWidth: "50%" }}
+              style={{ minWidth: "50%", backgroundColor: "#686D76" }}
             >
               <canvas
                 id="canvas4d"
@@ -179,6 +205,14 @@ const Hlavni = () => {
             </div>
           </div>
         </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#686D76"
+            fill-opacity="1"
+            d="M0,256L80,218.7C160,181,320,107,480,96C640,85,800,139,960,138.7C1120,139,1280,85,1360,58.7L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
       </section>
 
       <section>
@@ -209,7 +243,7 @@ const Hlavni = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

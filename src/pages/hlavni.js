@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../Conponenty/navbar";
 import Login from "../Conponenty/Login";
 import HlaviPage from "../Conponenty/hlavniPage";
-import pozadi from "../pages/pozadi2.png";
+import Footer from "../Conponenty/footer";
 
 function Hlavni() {
   return (
@@ -12,6 +12,7 @@ function Hlavni() {
       <Navbar />
       <HlaviPage />
       <Login />
+      <Footer />
     </div>
   );
 }

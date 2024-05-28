@@ -14,7 +14,10 @@ const supabase = createClient(
 function Login() {
   return (
     <section>
-      <div className="container mt-5  bg-white bg-opacity-25 rounded-4">
+      <div
+        className="container mt-5  bg-white bg-opacity-25 rounded-4"
+        id="Prihlasit"
+      >
         <Auth
           supabaseClient={supabase}
           providers={["discord", "google"]}

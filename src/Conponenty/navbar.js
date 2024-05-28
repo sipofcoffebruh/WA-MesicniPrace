@@ -1,43 +1,72 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import houseImage from "../pages/house.jpg";
+import logoSmall from "../Conponenty/images/logoSmall.png";
+import "./App.css";
 
 const Navbar = () => {
   return (
     <>
-      <div className="container-fluid position-fixed">
-        <ul className="nav nav-tabs justify-content-center align-items-end bg-white">
-          <a className="nav-link active" href="#neivm">
-            <img
-              src={houseImage}
-              alt="house"
-              style={{ width: "30px", height: "30px" }}
-            />
+      <ul className="nav nav-item justify-content-center align-items-center position-fixed navbar-custom container-fluid ">
+        <a className="nav-link active" href="#Domu">
+          <img
+            src={logoSmall}
+            alt="house"
+            style={{ width: "30px", height: "30px" }}
+          />
+        </a>
+        <li className="nav-item active">
+          <a className="nav-link text-dark bg-white bg-opacity-75" href="#Domu">
+            Domů
           </a>
-          <li className="nav-item active">
-            <a className="nav-link text-dark" href="#nevim">
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-dark" href="#nevim">
-              Features
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-dark" href="#nevim">
-              Pricing
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-dark" href="#nevim">
-              Disabled
-            </a>
-          </li>
-        </ul>
-      </div>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link text-dark bg-white bg-opacity-75"
+            href="#Sluzby"
+          >
+            Služby
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link text-dark bg-white bg-opacity-75"
+            href="#Prodej"
+          >
+            Prodej
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link text-dark bg-white bg-opacity-75"
+            href="#Nevim"
+          >
+            Nevim
+          </a>
+        </li>
+        <li className="nav-pills ">
+          <a className="nav-link text-dark bg-success" href="#Prihlasit">
+            Přihlásit se
+          </a>
+        </li>
+      </ul>
 
-      <div className="container-fluid" style={{ height: "1000px" }}></div>
+      <div className="container-fluid container-bg" id="Domu">
+        <div>
+          <h1>Skibidi realitky: Cesta k brainrottu </h1>
+          <p>zab se more</p>
+        </div>
+        <svg
+          className="svg-overlay"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,288L60,288C120,288,240,288,360,277.3C480,267,600,245,720,245.3C840,245,960,267,1080,266.7C1200,267,1320,245,1380,234.7L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
     </>
   );
 };

@@ -5,6 +5,12 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "aos/dist/aos.css";
 import "glightbox/dist/css/glightbox.min.css";
 import { Application } from "@splinetool/runtime";
+<<<<<<< Updated upstream
+=======
+import "./App.css";
+import House3 from "../Conponenty/images/house3.png";
+import Invest2 from "../Conponenty/images/Investing2.jpg";
+>>>>>>> Stashed changes
 
 const Hlavni = () => {
   useEffect(() => {

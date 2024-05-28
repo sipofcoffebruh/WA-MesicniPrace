@@ -45,15 +45,10 @@ const Hlavni = () => {
           style={{ backgroundColor: "#94849B" }}
         >
           <div className="row gy-4">
-            <div
-              className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
-              style={{ minWidth: "40%" }}
-            >
-              <h1 className="p-5">
-                Better Solutions For <br /> Your Business
-              </h1>
+            <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column  align-items-center">
+              <h1 className="p-5">Skibidi realitní kanceláře</h1>
               <h3 className="p-5">
-                We are team of talented designers making websites with Bootstrap
+                "S námi začíná nová kapitola vašeho života"
               </h3>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img">

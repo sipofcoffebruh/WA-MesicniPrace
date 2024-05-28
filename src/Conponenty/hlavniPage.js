@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
-import houseImage from "../pages/house.jpg";
+import houseImage from "../Conponenty/images/house.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "aos/dist/aos.css";
 import "glightbox/dist/css/glightbox.min.css";
 import { Application } from "@splinetool/runtime";
+import "./App.css";
+import House3 from "../Conponenty/images/house3.png";
+import Invest from "../Conponenty/images/invest.png";
+import Invest2 from "../Conponenty/images/Investing2.jpg";
 
 const Hlavni = () => {
   useEffect(() => {
@@ -33,7 +37,7 @@ const Hlavni = () => {
           <path
             fill="#94849B"
             fill-opacity="1"
-            d="M0,0L30,16C60,32,120,64,180,80C240,96,300,96,360,122.7C420,149,480,203,540,208C600,213,660,171,720,176C780,181,840,235,900,256C960,277,1020,267,1080,229.3C1140,192,1200,128,1260,101.3C1320,75,1380,85,1410,90.7L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+            d="M0,224L60,234.7C120,245,240,267,360,261.3C480,256,600,224,720,218.7C840,213,960,235,1080,218.7C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
           ></path>
         </svg>
         <div
@@ -71,16 +75,17 @@ const Hlavni = () => {
           ></path>
         </svg>
         <div className="container-fluid" style={{ backgroundColor: "#A0AAB2" }}>
-          <div className="row d-flex flex-row justify-content-center">
-            <h2 id="sluzby" className="display-5 text-center p-3 mt-5 mb-5">
-              Naše služby
-            </h2>
+          <div
+            className="row d-flex flex-row justify-content-center card-shadow"
+            id="Sluzby"
+          >
+            <h2 className="display-5 text-center p-3 mt-5 mb-5">Naše služby</h2>
             {["prodej nemovitosti", "poradenství", "koupě nemovitosti"].map(
               (title, index) => (
                 <div
                   className="col-sm-3 p-5"
                   key={index}
-                  style={{ minWidth: "350px" }}
+                  style={{ minWidth: "300px " }}
                 >
                   <div className="card h-100 shadow-sm mb-5 pb-5">
                     <img
@@ -98,9 +103,7 @@ const Hlavni = () => {
                         Some example text some example text. John Doe is an
                         architect and engineer.
                       </p>
-                      <a href="#nevim" className="btn btn-primary mt-4">
-                        See Profile
-                      </a>
+                      <button class="button-89">Button 89</button>
                     </div>
                   </div>
                 </div>
@@ -123,6 +126,7 @@ const Hlavni = () => {
           <path
             fill="#C7CEDB"
             fill-opacity="1"
+            id="Prodej"
             d="M0,320L48,304C96,288,192,256,288,240C384,224,480,224,576,224C672,224,768,224,864,213.3C960,203,1056,181,1152,186.7C1248,192,1344,224,1392,240L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
@@ -132,7 +136,7 @@ const Hlavni = () => {
         >
           <div className="row">
             <div className="col-sm-1"></div>
-            <div className="col-sm-5">
+            <div className="col-sm-5" style={{ minWidth: "300px" }}>
               <h2 className="display-5 m-5">
                 Chcete prodat svou
                 <br />
@@ -158,18 +162,10 @@ const Hlavni = () => {
                 Kontaktujte nás ještě dnes a začněte svou cestu k úspěšnému
                 prodeji vaší nemovitosti.
               </p>
-              <button type="button" className="btn btn-outline-info m-5 p-3">
-                Napiste nam
-              </button>
+              <button class="button-84 m-5">Button 84</button>
             </div>
-            <div className="col-sm-6 d-flex justify-content-center align-content-center">
-              <div
-                style={{
-                  height: "100px",
-                  width: "100px",
-                  backgroundColor: "red",
-                }}
-              ></div>
+            <div className="col-sm-6 justify-content-center align-content-center">
+              <img src={House3} alt="house" />
             </div>
           </div>
         </div>
@@ -196,10 +192,11 @@ const Hlavni = () => {
           style={{ backgroundColor: "#7E9181" }}
         >
           <div className="row w-100">
-            <div className="col-sm-1" style={{ backgroundColor: "" }}></div>
+            <div className="col-sm-1"></div>
             <div
               className="col-sm-5 pt-5 d-flex flex-column justify-content-center"
               style={{ backgroundColor: "#7E9181" }}
+              id="Nevim"
             >
               <h2>Nadpis 1</h2>
               <h2>Nadpis 2</h2>
@@ -259,26 +256,39 @@ const Hlavni = () => {
         >
           <div className="row">
             <div className="col-sm-1"></div>
-            <div className="col-sm-6"></div>
+            <div className="col-sm-6 justify-content-center align-content-center">
+              <img
+                src={Invest2}
+                alt="InvestingImage"
+                style={{ width: "80%", height: "auto" }}
+                className="rounded-5"
+              />
+            </div>
             <div className="col-sm-5">
               <h2 className="display-5 m-5">
-                Chcete prodat svou
-                <br />
-                nemovitost??
+                Realitní Investice: Cesta k <br></br>Finanční Nezávislosti
               </h2>
               <p className="p-2 m-5">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Numquam cupiditate consequatur molestiae ea dolor saepe at
-                labore libero doloribus blanditiis dolorem, ab quia alias,
-                quidem assumenda ut perferendis iure. Repellendus?Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Ipsa, voluptas
-                veniam et incidunt nesciunt similique, dicta ullam eum
-                laudantium mollitia, accusantium saepe distinctio magnam dolor!
-                Distinctio quis unde dolorum hic!
+                <ul>
+                  <li>
+                    Investujte do nemovitostí a budujte stabilní zdroj příjmů.
+                    Prozkoumejte svět realit a vybudujte si jistou finanční
+                    budoucnost.
+                  </li>
+                  <li>
+                    Poradíme vám s výběrem správné nemovitosti pro váš
+                    investiční úspěch.
+                  </li>
+                  <li>
+                    Optimalizujte své investice a dosáhněte finančních cílů.
+                  </li>
+                  <li>
+                    Prozkoumejte svět realit a vybudujte si jistou finanční
+                    budoucnost.
+                  </li>
+                </ul>
               </p>
-              <button type="button" className="btn btn-outline-info ms-5 p-3">
-                Napiste nam
-              </button>
+              <button class="button-86 m-5">Začít Investovat</button>
             </div>
           </div>
         </div>

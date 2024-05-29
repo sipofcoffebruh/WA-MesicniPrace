@@ -1,5 +1,4 @@
 import React from "react";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
@@ -26,6 +25,8 @@ function Login() {
         />
       </div>
     </section>
+
+    
   );
 }
 

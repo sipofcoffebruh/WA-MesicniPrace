@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
 
             <div className="col-12 text-center mt-3">
-              <p className="text-white">Copyright © 2024 Filip Elznic.</p>
+              <p className="text-white">Copyright © 2024 Filip Else If & Meloun Nigien.</p>
             </div>
           </div>
         </div>

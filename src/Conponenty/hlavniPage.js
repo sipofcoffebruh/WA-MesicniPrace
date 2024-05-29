@@ -9,6 +9,13 @@ import "./App.css";
 import House3 from "../Conponenty/images/house3.png";
 import Invest2 from "../Conponenty/images/Investing2.jpg";
 import { motion } from "framer-motion";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  "https://imhpbtahieylppvxmkul.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltaHBidGFoaWV5bHBwdnhta3VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzAyMTYsImV4cCI6MjAzMDMwNjIxNn0.pkiubXD_EW39TgtK0Luaje1re352g2I_X1Xfb42w4KI"
+);
 
 const Hlavni = () => {
   const Variants = {
@@ -37,7 +44,7 @@ const Hlavni = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+    
   return (
     <>
       {/* Hlavicka */}
@@ -91,6 +98,31 @@ const Hlavni = () => {
     */}
 
       {/* Nase Sluzby */}
+
+
+      <p className="text-center display-5 mt-5">DB test zone</p>
+
+      
+      <div class="container">
+          <form action="" method="post">
+            <label for="jmeno" class="form-label">Jméno:</label>
+            <input type="text" name="jmeno" class="form-control"></input>
+
+            <label for="odkaz" class="form-label">Odkaz:</label>
+            <input type="text" name="odkaz" class="form-control"></input>
+
+            <label for="popis" class="form-label">Popis:</label>
+            <textarea name="popis" class="form-control"></textarea>
+
+            <label for="vek" class="form-label">Věk:</label>
+            <input type="number" name="vek" class="form-control"></input>
+
+            <input type="submit" name="uloz" value="Ulož do DB" class="btn btn-primary"></input>
+          </form>
+        </div>
+
+
+
       <section>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path

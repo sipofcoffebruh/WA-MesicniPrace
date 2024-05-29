@@ -41,8 +41,9 @@ const Hlavni = () => {
   return (
     <>
       {/* Hlavicka */}
-      {/*
-      <section id="test">
+
+      {/* <section id="test">
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#94849B"
@@ -86,7 +87,9 @@ const Hlavni = () => {
           ></path>
         </svg>
       </section>
+
     */}
+
       {/* Nase Sluzby */}
       <section>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -216,6 +219,7 @@ const Hlavni = () => {
                 Začít Prodej
               </motion.button>
             </div>
+
             <div className="col-sm-6 d-flex align-items-center justify-content-center">
               <img
                 className="rounded-5"

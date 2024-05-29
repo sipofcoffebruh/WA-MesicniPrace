@@ -7,7 +7,6 @@ import "glightbox/dist/css/glightbox.min.css";
 import { Application } from "@splinetool/runtime";
 import "./App.css";
 import House3 from "../Conponenty/images/house3.png";
-import Invest from "../Conponenty/images/invest.png";
 import Invest2 from "../Conponenty/images/Investing2.jpg";
 
 const Hlavni = () => {
@@ -32,7 +31,7 @@ const Hlavni = () => {
   return (
     <>
       {/* Hlavicka */}
-      <section id="test">
+      {/* <section id="test">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#94849B"
@@ -64,6 +63,8 @@ const Hlavni = () => {
           ></path>
         </svg>
       </section>
+
+    */}
 
       {/* Nase Sluzby */}
       <section>
@@ -165,7 +166,11 @@ const Hlavni = () => {
               <button class="button-84 m-5">Button 84</button>
             </div>
             <div className="col-sm-6 justify-content-center align-content-center">
-              <img src={House3} alt="house" />
+              <img
+                src={House3}
+                alt="house"
+                style={{ width: "80%", height: "auto" }}
+              />
             </div>
           </div>
         </div>

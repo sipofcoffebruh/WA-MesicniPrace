@@ -2,6 +2,16 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoSmall from "../Conponenty/images/logoSmall.png";
 import "./App.css";
+import { motion } from "framer-motion";
+
+const Variants = {
+  hidden1: { scale: 0.8 },
+  visible1: {
+    opacity: 0.8,
+    scale: 1,
+    transition: { duration: 2, delay: 0.2 },
+  },
+};
 
 const Navbar = () => {
   return (
@@ -52,7 +62,13 @@ const Navbar = () => {
 
       <div className="container-fluid container-bg" id="Domu">
         <div>
-          <h1>Skibidi realitky: Cesta k brainrottu </h1>
+          <motion.h1
+            initial="hidden1"
+            whileInView="visible1"
+            variants={Variants}
+          >
+            Skibidi realitky: Cesta k brainrottu{" "}
+          </motion.h1>
           <p>zab se more</p>
         </div>
         <svg

@@ -7,10 +7,19 @@ import "glightbox/dist/css/glightbox.min.css";
 import { Application } from "@splinetool/runtime";
 import "./App.css";
 import House3 from "../Conponenty/images/house3.png";
-import Invest from "../Conponenty/images/invest.png";
 import Invest2 from "../Conponenty/images/Investing2.jpg";
+import { motion } from "framer-motion";
 
 const Hlavni = () => {
+  const Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, delay: 0.5 },
+    },
+  };
+
   useEffect(() => {
     const canvas4d = document.getElementById("canvas4d");
     const app = new Application(canvas4d);
@@ -32,6 +41,7 @@ const Hlavni = () => {
   return (
     <>
       {/* Hlavicka */}
+      {/*
       <section id="test">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -46,13 +56,25 @@ const Hlavni = () => {
         >
           <div className="row gy-4">
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column  align-items-center">
-              <h1 className="p-5">Skibidi realitní kanceláře</h1>
+              <motion.h1
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                className="p-5"
+              >
+                Skibidi realitní kanceláře
+              </motion.h1>
               <h3 className="p-5">
                 "S námi začíná nová kapitola vašeho života"
               </h3>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img">
-              <img src={houseImage} alt="House" className="img-fluid p-5" />
+              <img
+                src={houseImage}
+                alt="House"
+                className="rounded-5"
+                style={{ width: "80%", height: "auto", paddingTop: "20px" }}
+              />
             </div>
           </div>
         </div>
@@ -64,7 +86,7 @@ const Hlavni = () => {
           ></path>
         </svg>
       </section>
-
+    */}
       {/* Nase Sluzby */}
       <section>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -87,9 +109,14 @@ const Hlavni = () => {
                   key={index}
                   style={{ minWidth: "300px " }}
                 >
-                  <div className="card h-100 shadow-sm mb-5 pb-5">
+                  <motion.div
+                    className="card h-100 shadow-sm mb-5 pb-5"
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={Variants}
+                  >
                     <img
-                      className="card-img-top mx-auto pt-3"
+                      className="card-img-top mx-auto pt-3 rounded-5"
                       src={houseImage}
                       alt="Card"
                       style={{
@@ -105,7 +132,7 @@ const Hlavni = () => {
                       </p>
                       <button class="button-89">Button 89</button>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               )
             )}
@@ -137,17 +164,31 @@ const Hlavni = () => {
           <div className="row">
             <div className="col-sm-1"></div>
             <div className="col-sm-5" style={{ minWidth: "300px" }}>
-              <h2 className="display-5 m-5">
+              <motion.h2
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                className="display-5 m-5"
+              >
                 Chcete prodat svou
                 <br />
                 nemovitost??
-              </h2>
-              <p>
+              </motion.h2>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+              >
                 Naše zkušenosti a odborné znalosti v oblasti realit vám pomohou
                 dosáhnout nejlepší možné ceny za vaši nemovitost. Zajišťujeme
                 komplexní služby včetně:
-              </p>
-              <p className="p-2 m-5">
+              </motion.p>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                className="p-2 m-5"
+              >
                 <ul>
                   <li>Profesionální ocenění vaší nemovitosti</li>
                   <li>Marketing a propagace na různých platformách</li>
@@ -155,17 +196,38 @@ const Hlavni = () => {
                   <li>Jednání s potenciálními kupci</li>
                   <li>Vyřizování veškerých formalit spojených s prodejem</li>
                 </ul>
-              </p>
-              <p>
+              </motion.p>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+              >
                 Chápeme, že prodej nemovitosti je významný krok, a jsme tu,
                 abychom zajistili, že vše proběhne hladce a bez stresu.
                 Kontaktujte nás ještě dnes a začněte svou cestu k úspěšnému
                 prodeji vaší nemovitosti.
-              </p>
-              <button class="button-84 m-5">Button 84</button>
+              </motion.p>
+              <motion.button
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                class="button-84 m-5"
+              >
+                Začít Prodej
+              </motion.button>
             </div>
-            <div className="col-sm-6 justify-content-center align-content-center">
-              <img src={House3} alt="house" />
+            <div className="col-sm-6 d-flex align-items-center justify-content-center">
+              <img
+                className="rounded-5"
+                src={House3}
+                alt="house"
+                style={{
+                  width: "80%",
+                  height: "auto",
+                  paddingTop: "20px",
+                  paddingBottom: "20px",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -198,23 +260,52 @@ const Hlavni = () => {
               style={{ backgroundColor: "#7E9181" }}
               id="Nevim"
             >
-              <h2>Nadpis 1</h2>
-              <h2>Nadpis 2</h2>
-              <h2>Nadpis 3</h2>
-              <p className="mt-5 mb-5 m-lg-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis numquam, mollitia natus in vitae doloribus
-                exercitationem id praesentium, eos voluptatibus minus possimus!
-                Laudantium quod amet ullam voluptate ratione id assumenda? Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
-                possimus eum reiciendis. Eaque, in, dignissimos tempora optio
-                nemo earum culpa beatae praesentium id distinctio maiores
-                repellendus, exercitationem consequatur voluptas tempore.
-              </p>
-              <p className="mb-1">
-                <span className="h5">Lorem ipsum dolor sitpellat</span>
-                <br /> Officia hic quibusdam, nisi voluptates aut ver
-              </p>
+              <motion.h2
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+              >
+                Prodej
+              </motion.h2>
+              <motion.h2
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+              >
+                Bydlení
+              </motion.h2>
+              <motion.h2
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+              >
+                Nemovitosti
+              </motion.h2>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                className="mt-5 mb-5 m-lg-5"
+              >
+                Naše realitní kancelář nabízí komplexní služby v oblasti prodeje
+                a pronájmu nemovitostí. S naším profesionálním týmem najdete
+                ideální místo pro život nebo podnikání rychle a bez starostí.
+                Naše linka je k dispozici 24/7. Zavolejte nám ještě dnes a
+                domluvte si osobní schůzku. Díky naší rozsáhlé databázi
+                nemovitostí a individuálnímu přístupu k zákazníkům vám pomůžeme
+                splnit všechny vaše požadavky. Spolehněte se na nás, a my se
+                postaráme o všechny detaily, abyste si mohli užívat
+                bezproblémový průběh celého procesu.
+              </motion.p>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                className="mb-1"
+              >
+                <span className="h5">Profesionální přístup k realitám.</span>
+                <br /> Nabízíme kvalitní služby pro vaše bydlení i podnikání.
+              </motion.p>
             </div>
             <div
               className="col-sm-6 d-flex align-items-center justify-content-center"
@@ -256,19 +347,29 @@ const Hlavni = () => {
         >
           <div className="row">
             <div className="col-sm-1"></div>
-            <div className="col-sm-6 justify-content-center align-content-center">
+            <div className="col-sm-6 d-flex align-items-center justify-content-center">
               <img
                 src={Invest2}
                 alt="InvestingImage"
-                style={{ width: "80%", height: "auto" }}
+                style={{ width: "80%", height: "auto", paddingTop: "20px" }}
                 className="rounded-5"
               />
             </div>
             <div className="col-sm-5">
-              <h2 className="display-5 m-5">
+              <motion.h2
+                className="display-5 m-5"
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+              >
                 Realitní Investice: Cesta k <br></br>Finanční Nezávislosti
-              </h2>
-              <p className="p-2 m-5">
+              </motion.h2>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                className="p-2 m-5"
+              >
                 <ul>
                   <li>
                     Investujte do nemovitostí a budujte stabilní zdroj příjmů.
@@ -287,8 +388,15 @@ const Hlavni = () => {
                     budoucnost.
                   </li>
                 </ul>
-              </p>
-              <button class="button-86 m-5">Začít Investovat</button>
+              </motion.p>
+              <motion.button
+                initial="hidden"
+                whileInView="visible"
+                variants={Variants}
+                class="button-86 m-5"
+              >
+                Začít Investovat
+              </motion.button>
             </div>
           </div>
         </div>

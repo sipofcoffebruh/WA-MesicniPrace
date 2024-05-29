@@ -60,14 +60,14 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="container-fluid container-bg" id="Domu">
+      <div className="container-fluid container-bg text-dark" id="Domu">
         <div>
           <motion.h1
             initial="hidden1"
             whileInView="visible1"
             variants={Variants}
           >
-            Skibidi realitky: Cesta k brainrottu{" "}
+            Skibidi realitky: Cesta k brainrottu
           </motion.h1>
           <p>zab se more</p>
         </div>

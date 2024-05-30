@@ -1,8 +1,9 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logoSmall from "../Conponenty/images/logoSmall.png";
 import "./App.css";
 import { motion } from "framer-motion";
+import { createClient } from "@supabase/supabase-js";
+import React from "react";
 
 const Variants = {
   hidden1: { scale: 0.8 },
@@ -14,10 +15,21 @@ const Variants = {
 };
 
 const Navbar = () => {
+  const supabase = createClient(
+    "https://imhpbtahieylppvxmkul.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltaHBidGFoaWV5bHBwdnhta3VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzAyMTYsImV4cCI6MjAzMDMwNjIxNn0.pkiubXD_EW39TgtK0Luaje1re352g2I_X1Xfb42w4KI"
+  );
+
+  async function signOutUser() {
+    const { error } = await supabase.auth.signOut();
+    console.log(error);
+    window.location.href = "/";
+  }
+
   return (
     <>
       <ul className="nav nav-item justify-content-center align-items-center position-fixed navbar-custom container-fluid ">
-        <a className="nav-link active" href="#Domu">
+        <a className="nav-link active" href="/">
           <img
             src={logoSmall}
             alt="house"
@@ -25,14 +37,14 @@ const Navbar = () => {
           />
         </a>
         <li className="nav-item active">
-          <a className="nav-link text-dark bg-white bg-opacity-75" href="#Domu">
+          <a className="nav-link text-dark bg-white bg-opacity-75" href="/">
             Domů
           </a>
         </li>
         <li className="nav-item">
           <a
             className="nav-link text-dark bg-white bg-opacity-75"
-            href="#Sluzby"
+            href="/#sluzby"
           >
             Služby
           </a>
@@ -40,27 +52,22 @@ const Navbar = () => {
         <li className="nav-item">
           <a
             className="nav-link text-dark bg-white bg-opacity-75"
-            href="#Prodej"
+            href="/#prodej"
           >
             Prodej
           </a>
         </li>
         <li className="nav-item">
-          <a
-            className="nav-link text-dark bg-white bg-opacity-75"
-            href="#Nevim"
-          >
-            Nevim
+          <a className="nav-link text-dark bg-white bg-opacity-75" href="/team">
+            Náš tým
           </a>
         </li>
         <li className="nav-pills ">
-          <a className="nav-link text-dark bg-success" href="#Prihlasit">
-            Přihlásit se
-          </a>
+          <button onClick={() => signOutUser()}>Sign Out</button>
         </li>
       </ul>
 
-      <div className="container-fluid container-bg text-dark" id="Domu">
+      <div className="container-fluid container-bg text-dark" id="/">
         <div>
           <motion.h1
             initial="hidden1"

@@ -44,7 +44,7 @@ const Hlavni = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-    
+
   return (
     <>
       {/* Hlavicka */}
@@ -99,29 +99,38 @@ const Hlavni = () => {
 
       {/* Nase Sluzby */}
 
-
       <p className="text-center display-5 mt-5">DB test zone</p>
 
-      
       <div class="container">
-          <form action="" method="post">
-            <label for="jmeno" class="form-label">Jméno:</label>
-            <input type="text" name="jmeno" class="form-control"></input>
+        <form action="" method="post">
+          <label for="jmeno" class="form-label">
+            Jméno:
+          </label>
+          <input type="text" name="jmeno" class="form-control"></input>
 
-            <label for="odkaz" class="form-label">Odkaz:</label>
-            <input type="text" name="odkaz" class="form-control"></input>
+          <label for="odkaz" class="form-label">
+            Odkaz:
+          </label>
+          <input type="text" name="odkaz" class="form-control"></input>
 
-            <label for="popis" class="form-label">Popis:</label>
-            <textarea name="popis" class="form-control"></textarea>
+          <label for="popis" class="form-label">
+            Popis:
+          </label>
+          <textarea name="popis" class="form-control"></textarea>
 
-            <label for="vek" class="form-label">Věk:</label>
-            <input type="number" name="vek" class="form-control"></input>
+          <label for="vek" class="form-label">
+            Věk:
+          </label>
+          <input type="number" name="vek" class="form-control"></input>
 
-            <input type="submit" name="uloz" value="Ulož do DB" class="btn btn-primary"></input>
-          </form>
-        </div>
-
-
+          <input
+            type="submit"
+            name="uloz"
+            value="Ulož do DB"
+            class="btn btn-primary"
+          ></input>
+        </form>
+      </div>
 
       <section>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -136,7 +145,9 @@ const Hlavni = () => {
             className="row d-flex flex-row justify-content-center card-shadow"
             id="Sluzby"
           >
-            <h2 className="display-5 text-center p-3 mt-5 mb-5">Naše služby</h2>
+            <h2 className="display-5 text-center p-3 mt-5 mb-5" id="sluzby">
+              Naše služby
+            </h2>
             {["prodej nemovitosti", "poradenství", "koupě nemovitosti"].map(
               (title, index) => (
                 <div
@@ -204,6 +215,7 @@ const Hlavni = () => {
                 whileInView="visible"
                 variants={Variants}
                 className="display-5 m-5"
+                id="prodej"
               >
                 Chcete prodat svou
                 <br />

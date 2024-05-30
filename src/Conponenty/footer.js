@@ -28,8 +28,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="/contact" className="nav-link px-2 text-white">
-                  Contact
+                <a href="/team" className="nav-link px-2 text-white">
+                  Náš team
                 </a>
               </li>
               <li className="nav-item">

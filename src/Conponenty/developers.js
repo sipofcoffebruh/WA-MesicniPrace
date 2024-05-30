@@ -31,7 +31,7 @@ const Developers = () => {
                 <div className="card-body">
                   <h2 className="card-title mt-2 mb-5">Meloun Nigien</h2>
                   <p className="card-text">
-                    Jsem Vietnamcem a nedávno jsem pracoval na vývoji webové
+                    Jsem Vietnamec a nedávno jsem pracoval na vývoji webové
                     stránky, což byla pro mě skvělá zkušenost. Práce na tomto
                     projektu mě opravdu bavila, protože jsem mohl využít své
                     dovednosti v oblasti webového designu a programování. Byla
@@ -39,7 +39,8 @@ const Developers = () => {
                     objevování nových technologií a metod. Kromě své práce mám
                     velkou zálibu v kočkách, které mi přinášejí radost a
                     odpočinek po náročném dni. Kombinace mého profesního života
-                    a chutí koček v mém jidlu vyvážený a spokojený život.
+                    a chutí koček v mém jidlu mi dává vyvážený a spokojený
+                    život.
                   </p>
                   <p className="card-text">
                     <small className="text-muted mt-2">
@@ -75,8 +76,8 @@ const Developers = () => {
                     naplno využít své dovednosti v oblasti webového vývoje. I
                     když se občas dostanu do komických situací a udělám nějakou
                     tu chybu, vždy se na tom dokážu zasmát a poučit se. Tento
-                    projekt mi umožnil nejen se vic nenavidet, ale také se
-                    naucit ze i opravdu tlusty stůl jde rozbít.
+                    projekt mi umožnil nejen se víc nenávidet, ale také se
+                    naučit že i opravdu tlustý stůl jde rozbít.
                   </p>
                   <p className="card-text">
                     <small className="text-muted mt-2">

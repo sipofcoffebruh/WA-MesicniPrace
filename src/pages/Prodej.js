@@ -1,17 +1,14 @@
-import React from 'react';
+import React from "react";
 import Navbar from "../Conponenty/navbar";
-import Login from "../Conponenty/Login";
-import HlaviPage from "../Conponenty/hlavniPage";
 import Footer from "../Conponenty/footer";
-import ProdejPage from '../Conponenty/prodejPage';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ProdejPage from "../Conponenty/prodejPage";
 
 const Prodej = () => {
   return (
     <div>
-            <Navbar />
-            <ProdejPage />
-            <Footer />
+      <Navbar />
+      <ProdejPage />
+      <Footer />
     </div>
   );
 };

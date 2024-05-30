@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="row">
             <ul className="nav justify-content-center border-bottom pt-3 mt-3">
               <li className="nav-item ">
-                <a href="#test" className="nav-link px-2 text-white">
+                <a href="/" className="nav-link px-2 text-white">
                   Home
                 </a>
               </li>
@@ -28,7 +28,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#test" className="nav-link px-2 text-white">
+                <a href="/contact" className="nav-link px-2 text-white">
                   Contact
                 </a>
               </li>
@@ -40,7 +40,9 @@ const Footer = () => {
             </ul>
 
             <div className="col-12 text-center mt-3">
-              <p className="text-white">Copyright © 2024 Filip Else If & Meloun Nigien.</p>
+              <p className="text-white">
+                Copyright © 2024 Filip Else If & Meloun Nigien.
+              </p>
             </div>
           </div>
         </div>

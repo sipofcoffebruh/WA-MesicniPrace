@@ -2,6 +2,8 @@ import { createClient } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Navbar from "../Conponenty/navbar";
+import LoginPage from "../Conponenty/loginPage";
+import HlaviPage from "../Conponenty/hlavniPage";
 import HlavniPage from "../Conponenty/hlavniPage";
 import Footer from "../Conponenty/footer";
 
@@ -35,6 +37,8 @@ function Hlavni() {
           <div className="App">
             <Navbar />
             <HlavniPage />
+            <HlaviPage />
+            <LoginPage />
             <Footer />
           </div>
         </>

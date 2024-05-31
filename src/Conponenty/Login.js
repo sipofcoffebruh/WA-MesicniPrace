@@ -15,7 +15,7 @@ function Login() {
     if (event === "SIGNED_IN") {
       // forwart to success url
       console.log("signed in");
-      window.location.href = "/hlavni";
+      window.location.href = "/";
     } else {
     }
   });

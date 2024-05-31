@@ -43,8 +43,6 @@ function Team() {
             <Navbar />
             <Developers />
             <Footer />
-            <h1>Success</h1>
-            <button onClick={() => signOutUser()}>Sign Out</button>
           </div>
         </>
       ) : (
@@ -52,7 +50,7 @@ function Team() {
           <h1>User is not Logged</h1>
           <button
             onClick={() => {
-              navigate("/");
+              navigate("/login");
             }}
           >
             Go back to Sign In

@@ -29,12 +29,6 @@ function Team() {
     getUserData();
   }, [user]);
 
-  async function signOutUser() {
-    const { error } = await supabase.auth.signOut();
-    console.log(error);
-    navigate("/");
-  }
-
   return (
     <div>
       {Object.keys(user).length !== 0 ? (

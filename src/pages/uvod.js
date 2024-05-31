@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../Conponenty/Login.js";
+import Login from "../Conponenty/loginPage.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "aos/dist/aos.css";

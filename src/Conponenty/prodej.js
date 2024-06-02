@@ -2,68 +2,256 @@
 import React, { useState } from 'react';
 import supabase from '../config/supabase';
 
-const Prodej = () => {
+const ProdejPage = () => {
   const [formData, setFormData] = useState({
-    data1: '',
-    data2: '',
-    data3: ''
+    address: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    price: '',
+    propertyType: '',
+    listingDate: '',
+    status: '',
+    bedrooms: '',
+    bathrooms: '',
+    squareFeet: '',
+    lotSize: '',
+    garage: false,
+    pool: false
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Convert data1 to an integer
-    const data1Int = parseInt(formData.data1, 10);
-
-    if (isNaN(data1Int)) {
-      alert("data1 must be an integer");
-      return;
-    }
+    const {
+      address,
+      city,
+      state,
+      zipCode,
+      price,
+      propertyType,
+      listingDate,
+      status,
+      bedrooms,
+      bathrooms,
+      squareFeet,
+      lotSize,
+      garage,
+      pool
+    } = formData;
 
     const { data, error } = await supabase
-      .from('test')
+      .from('Properties')
       .insert([
-        { data1: data1Int, data2: formData.data2, data3: formData.data3 }
+        {
+          address,
+          city,
+          state,
+          zipCode,
+          price: parseFloat(price),
+          propertyType,
+          listingDate,
+          status
+        }
       ]);
 
     if (error) {
-      console.error('Error inserting data:', error);
-    } else {
-      console.log('Data inserted successfully:', data);
+      console.error('Error inserting property data:', error);
+      return;
+    }
+
+    const propertyId = data[0].propertyID;
+
+    if (propertyType === 'House') {
+      const { error: houseError } = await supabase
+        .from('Houses')
+        .insert([
+          {
+            propertyID: propertyId,
+            bedrooms: parseInt(bedrooms, 10),
+            bathrooms: parseFloat(bathrooms),
+            squareFeet: parseInt(squareFeet, 10),
+            lotSize: parseFloat(lotSize),
+            garage,
+            pool
+          }
+        ]);
+
+      if (houseError) {
+        console.error('Error inserting house data:', houseError);
+      } else {
+        console.log('House data inserted successfully');
+      }
+    } else if (propertyType === 'Apartment') {
+      const { error: apartmentError } = await supabase
+        .from('Apartments')
+        .insert([
+          {
+            propertyID: propertyId,
+            bedrooms: parseInt(bedrooms, 10),
+            bathrooms: parseFloat(bathrooms),
+            squareFeet: parseInt(squareFeet, 10),
+            floor: parseInt(formData.floor, 10)
+          }
+        ]);
+
+      if (apartmentError) {
+        console.error('Error inserting apartment data:', apartmentError);
+      } else {
+        console.log('Apartment data inserted successfully');
+      }
+    } else if (propertyType === 'Land') {
+      const { error: landError } = await supabase
+        .from('Lands')
+        .insert([
+          {
+            propertyID: propertyId,
+            lotSize: parseFloat(lotSize),
+            zonedFor: formData.zonedFor
+          }
+        ]);
+
+      if (landError) {
+        console.error('Error inserting land data:', landError);
+      } else {
+        console.log('Land data inserted successfully');
+      }
     }
   };
 
   return (
     <div>
-      <h1>Insert Data into Supabase</h1>
+      <h1>Insert Property into Supabase</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Data1 (integer, required):
-          <input type="number" name="data1" value={formData.data1} onChange={handleChange} required />
+          Address:
+          <input type="text" name="address" value={formData.address} onChange={handleChange} required />
         </label>
         <br />
         <label>
-          Data2 (optional):
-          <input type="text" name="data2" value={formData.data2} onChange={handleChange} />
+          City:
+          <input type="text" name="city" value={formData.city} onChange={handleChange} required />
         </label>
         <br />
         <label>
-          Data3 (optional):
-          <textarea name="data3" value={formData.data3} onChange={handleChange} />
+          State:
+          <input type="text" name="state" value={formData.state} onChange={handleChange} required />
         </label>
         <br />
+        <label>
+          Zip Code:
+          <input type="text" name="zipCode" value={formData.zipCode} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Price:
+          <input type="number" step="0.01" name="price" value={formData.price} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Property Type:
+          <select name="propertyType" value={formData.propertyType} onChange={handleChange} required>
+            <option value="">Select...</option>
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Land">Land</option>
+          </select>
+        </label>
+        <br />
+        <label>
+          Listing Date:
+          <input type="date" name="listingDate" value={formData.listingDate} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Status:
+          <input type="text" name="status" value={formData.status} onChange={handleChange} required />
+        </label>
+        <br />
+        {formData.propertyType === 'House' && (
+          <>
+            <label>
+              Bedrooms:
+              <input type="number" name="bedrooms" value={formData.bedrooms} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Bathrooms:
+              <input type="number" step="0.1" name="bathrooms" value={formData.bathrooms} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Square Feet:
+              <input type="number" name="squareFeet" value={formData.squareFeet} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Lot Size:
+              <input type="number" step="0.01" name="lotSize" value={formData.lotSize} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Garage:
+              <input type="checkbox" name="garage" checked={formData.garage} onChange={handleChange} />
+            </label>
+            <br />
+            <label>
+              Pool:
+              <input type="checkbox" name="pool" checked={formData.pool} onChange={handleChange} />
+            </label>
+            <br />
+          </>
+        )}
+        {formData.propertyType === 'Apartment' && (
+          <>
+            <label>
+              Bedrooms:
+              <input type="number" name="bedrooms" value={formData.bedrooms} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Bathrooms:
+              <input type="number" step="0.1" name="bathrooms" value={formData.bathrooms} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Square Feet:
+              <input type="number" name="squareFeet" value={formData.squareFeet} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Floor:
+              <input type="number" name="floor" value={formData.floor} onChange={handleChange} required />
+            </label>
+            <br />
+          </>
+        )}
+        {formData.propertyType === 'Land' && (
+          <>
+            <label>
+              Lot Size:
+              <input type="number" step="0.01" name="lotSize" value={formData.lotSize} onChange={handleChange} required />
+            </label>
+            <br />
+            <label>
+              Zoned For:
+              <input type="text" name="zonedFor" value={formData.zonedFor} onChange={handleChange} required />
+            </label>
+            <br />
+          </>
+        )}
         <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
 
-export default Prodej;
+export default ProdejPage;

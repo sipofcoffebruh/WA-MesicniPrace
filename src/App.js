@@ -1,7 +1,7 @@
 import "./App.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Hlavni from "./pages/hlavni.js";
-import Prodej from "./pages/Prodej.js";
+import Hlavni from "./pages/hlavniPage.js";
+import Prodej from "./pages/prodejPage.js";
 import Team from "./pages/team.js";
 import Login from "./pages/uvod.js";
 

@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "../Conponenty/navbar";
-import HlavniPage from "../Conponenty/hlavniPage";
+import Hlavni from "../Conponenty/hlavni";
 import Footer from "../Conponenty/footer";
 
-function Hlavni() {
+function HlavniPage() {
   return (
     <div>
       <Navbar />
-      <HlavniPage />
+      <Hlavni />
       <Footer />
     </div>
   );
 }
-export default Hlavni;
+export default HlavniPage;

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import houseImage from "../Conponenty/images/house.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "aos/dist/aos.css";
@@ -9,13 +8,8 @@ import "./App.css";
 import House3 from "../Conponenty/images/house3.png";
 import Invest2 from "../Conponenty/images/Investing2.jpg";
 import { motion } from "framer-motion";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-  "https://imhpbtahieylppvxmkul.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltaHBidGFoaWV5bHBwdnhta3VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzAyMTYsImV4cCI6MjAzMDMwNjIxNn0.pkiubXD_EW39TgtK0Luaje1re352g2I_X1Xfb42w4KI"
-);
+import Karta from "./card.js";
 
 const Hlavni = () => {
   const Variants = {
@@ -47,61 +41,11 @@ const Hlavni = () => {
 
   return (
     <>
-      {/* Hlavicka */}
-
-      {/* <section id="test">
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#94849B"
-            fill-opacity="1"
-            d="M0,224L60,234.7C120,245,240,267,360,261.3C480,256,600,224,720,218.7C840,213,960,235,1080,218.7C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          ></path>
-        </svg>
-        <div
-          className="container-fluid text-white "
-          style={{ backgroundColor: "#94849B" }}
-        >
-          <div className="row gy-4">
-            <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column  align-items-center">
-              <motion.h1
-                initial="hidden"
-                whileInView="visible"
-                variants={Variants}
-                className="p-5"
-              >
-                Skibidi realitní kanceláře
-              </motion.h1>
-              <h3 className="p-5">
-                "S námi začíná nová kapitola vašeho života"
-              </h3>
-            </div>
-            <div className="col-lg-6 order-1 order-lg-2 hero-img">
-              <img
-                src={houseImage}
-                alt="House"
-                className="rounded-5"
-                style={{ width: "80%", height: "auto", paddingTop: "20px" }}
-              />
-            </div>
-          </div>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#94849B"
-            fill-opacity="1"
-            d="M0,0L30,16C60,32,120,64,180,80C240,96,300,96,360,122.7C420,149,480,203,540,208C600,213,660,171,720,176C780,181,840,235,900,256C960,277,1020,267,1080,229.3C1140,192,1200,128,1260,101.3C1320,75,1380,85,1410,90.7L1440,96L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
-          ></path>
-        </svg>
-      </section>
-
-    */}
-
       {/* Nase Sluzby */}
 
+      {/*
       <p className="text-center display-5 mt-5">DB test zone</p>
-
-      <div class="container">
+<div class="container">
         <form action="" method="post">
           <label for="jmeno" class="form-label">
             Jméno:
@@ -130,7 +74,7 @@ const Hlavni = () => {
             class="btn btn-primary"
           ></input>
         </form>
-      </div>
+      </div>*/}
 
       <section>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -148,42 +92,27 @@ const Hlavni = () => {
             <h2 className="display-5 text-center p-3 mt-5 mb-5" id="sluzby">
               Naše služby
             </h2>
-            {["prodej nemovitosti", "poradenství", "koupě nemovitosti"].map(
-              (title, index) => (
-                <div
-                  className="col-sm-3 p-5"
-                  key={index}
-                  style={{ minWidth: "300px " }}
-                >
-                  <motion.div
-                    className="card h-100 shadow-sm mb-5 pb-5"
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={Variants}
-                  >
-                    <img
-                      className="card-img-top mx-auto pt-3 rounded-5"
-                      src={houseImage}
-                      alt="Card"
-                      style={{
-                        width: "70%",
-                        borderRadius: "10px",
-                      }}
-                    />
-                    <div className="card-body text-center">
-                      <h4 className="card-title mt-3">{title}</h4>
-                      <p className="card-text mt-3">
-                        Some example text some example text. John Doe is an
-                        architect and engineer.
-                      </p>
-                      <button class="button-89">Button 89</button>
-                    </div>
-                  </motion.div>
-                </div>
-              )
-            )}
+
+            <Karta
+              img={House3}
+              title="Hellou world"
+              text="This card is just for testing and trying things"
+            />
+            <Karta
+              img={House3}
+              title="Hellou world"
+              text="This card is just for testing and trying things"
+            />
+            <Karta
+              img={House3}
+              title="Hellou world"
+              text="This card is just for testing and trying things"
+            />
           </div>
+
+          {/* karty */}
         </div>
+        <div className="row d-flex flex-row justify-content-center card-shadow"></div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#A0AAB2"
@@ -254,14 +183,15 @@ const Hlavni = () => {
                 Kontaktujte nás ještě dnes a začněte svou cestu k úspěšnému
                 prodeji vaší nemovitosti.
               </motion.p>
-              <motion.button
+              <motion.a
                 initial="hidden"
                 whileInView="visible"
                 variants={Variants}
                 class="button-84 m-5"
+                href="/prodej"
               >
                 Začít Prodej
-              </motion.button>
+              </motion.a>
             </div>
 
             <div className="col-sm-6 d-flex align-items-center justify-content-center">

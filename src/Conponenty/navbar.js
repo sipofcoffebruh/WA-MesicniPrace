@@ -52,7 +52,7 @@ const Navbar = () => {
         <li className="nav-item">
           <a
             className="nav-link text-dark bg-white bg-opacity-75"
-            href="/#prodej"
+            href="/prodej"
           >
             Prodej
           </a>

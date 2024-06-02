@@ -6,7 +6,10 @@ import Footer from "../Conponenty/footer";
 function HlavniPage() {
   return (
     <div>
-      <Navbar />
+      <Navbar
+        title="Skibidi Realitky: cesta k brainrottu"
+        text="zab se more dik"
+      />
       <Hlavni />
       <Footer />
     </div>

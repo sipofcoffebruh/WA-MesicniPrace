@@ -1,49 +1,54 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "aos/dist/aos.css";
-import Dkaj from "./images/dkaj.jpg";
-import Filip from "./images/Filip.jpg";
-import pes from "./images/pes.jpg";
+import { motion } from "framer-motion";
 
-const Developers = () => {
+function Developers(props) {
+  const Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, delay: 0.5 },
+    },
+  };
+
   return (
-    <div>
-      <div className="container-fluid">
-        <div className="row">
-          <h1 className="text-center mt-5 mb-5">Náš tým</h1>
-        </div>
-      </div>
-
-      <section className="pb-5">
+    <>
+      <section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#C7CEDB"
+            d="M0,160L60,165.3C120,171,240,181,360,197.3C480,213,600,235,720,234.7C840,235,960,213,1080,186.7C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+          ></path>
+        </svg>
         <div className="container-fluid">
-          <div className="card mb-3">
-            <div className="row">
-              <div className="col-md-4">
+          <div className="card">
+            <div className="row ">
+              <div className="col-md-4" style={{ backgroundColor: "#C7CEDB" }}>
                 <img
-                  src={Dkaj}
-                  class="card-img img-fluid"
+                  src={props.img}
+                  className="card-img img-fluid p-2 rounded-circle"
                   alt="..."
                   style={{ maxHeight: "400px" }}
                 />
               </div>
-              <div className="col-md-8 d-flex align-items-center justify-content-center">
+              <div
+                className="col-md-8 d-flex align-items-center justify-content-center"
+                style={{ backgroundColor: "#C7CEDB" }}
+              >
                 <div className="card-body">
-                  <h2 className="card-title mt-2 mb-5">Meloun Nigien</h2>
+                  <motion.h2
+                    className="card-title mt-2 mb-5"
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={Variants}
+                  >
+                    {props.title}
+                  </motion.h2>
+                  <p className="card-text">{props.text}</p>
                   <p className="card-text">
-                    Jsem Vietnamec a nedávno jsem pracoval na vývoji webové
-                    stránky, což byla pro mě skvělá zkušenost. Práce na tomto
-                    projektu mě opravdu bavila, protože jsem mohl využít své
-                    dovednosti v oblasti webového designu a programování. Byla
-                    to příležitost nejen k profesionálnímu růstu, ale také k
-                    objevování nových technologií a metod. Kromě své práce mám
-                    velkou zálibu v kočkách, které mi přinášejí radost a
-                    odpočinek po náročném dni. Kombinace mého profesního života
-                    a chutí koček v mém jidlu mi dává vyvážený a spokojený
-                    život.
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted mt-2">
+                    <small className="text-muted">
                       Last updated 3 mins ago
                     </small>
                   </p>
@@ -52,82 +57,15 @@ const Developers = () => {
             </div>
           </div>
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#C7CEDB"
+            d="M0,224L60,192C120,160,240,96,360,96C480,96,600,160,720,160C840,160,960,96,1080,58.7C1200,21,1320,11,1380,5.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+          ></path>
+        </svg>
       </section>
-
-      <section className="pb-5">
-        <div className="container-fluid">
-          <div className="card  mb-3">
-            <div className="row">
-              <div className="col-md-4">
-                <img
-                  src={Filip}
-                  class="card-img img-fluid"
-                  alt="..."
-                  style={{ maxHeight: "400px" }}
-                />
-              </div>
-              <div className="col-md-8 d-flex align-items-center justify-content-center">
-                <div className="card-body">
-                  <h2 className="card-title mt-2 mb-5">Filip Else If</h2>
-                  <p className="card-text">
-                    Jsem běloch a nedávno jsem se podílel na tvorbě webové
-                    stránky, což byla opravdu zábavná zkušenost. Práce na tomto
-                    projektu mi přinesla spoustu radosti, protože jsem mohl
-                    naplno využít své dovednosti v oblasti webového vývoje. I
-                    když se občas dostanu do komických situací a udělám nějakou
-                    tu chybu, vždy se na tom dokážu zasmát a poučit se. Tento
-                    projekt mi umožnil nejen se víc nenávidet, ale také se
-                    naučit že i opravdu tlustý stůl jde rozbít.
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted mt-2">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section style={{ marginBottom: "200px" }}>
-        <div className="container-fluid">
-          <div className="card mb-3">
-            <div className="row">
-              <div className="col-md-4">
-                <img
-                  src={pes}
-                  class="card-img img-fluid"
-                  alt="..."
-                  style={{ maxHeight: "400px" }}
-                />
-              </div>
-              <div className="col-md-8 d-flex align-items-center justify-content-center">
-                <div className="card-body">
-                  <h2 className="card-title mt-2 mb-5">Megoooonieee</h2>
-                  <p className="card-text">
-                    Haf haf, wouf wouf! Haaaf haaaf, wofff wofff. Haw haw,
-                    vrrrrr, haf! Wouf wouf, haaaf haaaf! Vrrrrr, wofff wofff,
-                    haw haw. Haf haf, vrrrrr, haaaf! Haaaf haaaf, wofff wofff.
-                    Haw haw, vrrrrr, haf! Haf haf, wouf wouf! Haf haf, wouf
-                    wouf! Haaaf haaaf, wofff wofff. Haw haw, vrrrrr, haf! Wouf
-                    wouf, haaaf haaaf! Vrrrrr, wofff wofff, haw haw. Haf haf,
-                    vrrrrr, haaaf! Haaaf haaaf, wofff wofff. Haw haw, vrrrrr,
-                    haf! Haf haf, wouf wouf!
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted mb-2">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    </>
   );
-};
+}
 
 export default Developers;

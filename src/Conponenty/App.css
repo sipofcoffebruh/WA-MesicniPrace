@@ -199,3 +199,60 @@
 .show {
   opacity: 1;
 }
+
+.button2 {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+  height: 40px;
+}
+
+.button2 svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.button2 span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.button2:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.button2:hover span {
+  transform: translateX(7px);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Seymour+One&display=swap");
+.seymour-one-regular {
+  font-family: "Seymour One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Seymour+One&display=swap");
+.orbitron-mggay {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Jaini+Purva&family=Orbitron:wght@400..900&family=Seymour+One&display=swap");
+.jaini-purva-regular {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}

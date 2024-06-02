@@ -14,7 +14,7 @@ function LoginPage() {
   supabase.auth.onAuthStateChange(async (event) => {
     if (event === "SIGNED_IN") {
       // forwart to success url
-      console.log("signed in");
+
       window.location.href = "/";
     } else {
     }

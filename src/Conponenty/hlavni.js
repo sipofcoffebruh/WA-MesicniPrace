@@ -5,9 +5,10 @@ import "aos/dist/aos.css";
 import "glightbox/dist/css/glightbox.min.css";
 import { Application } from "@splinetool/runtime";
 import "./App.css";
-import House3 from "../Conponenty/images/house3.png";
+import House from "../Conponenty/images/selling.jpg";
 import Invest2 from "../Conponenty/images/Investing2.jpg";
 import { motion } from "framer-motion";
+import House3 from "../Conponenty/images/house3.png";
 
 import Karta from "./card.js";
 
@@ -88,22 +89,25 @@ const Hlavni = () => {
             className="row d-flex flex-row justify-content-center card-shadow"
             id="Sluzby"
           >
-            <h2 className="display-5 text-center p-3 mt-5 mb-5" id="sluzby">
+            <h2
+              className="display-5 text-center p-3 mt-5 mb-5 seymour-one-regular"
+              id="sluzby"
+            >
               Naše služby
             </h2>
 
             <Karta
-              img={House3}
+              img={House}
               title="Hellou world"
               text="This card is just for testing and trying things"
             />
             <Karta
-              img={House3}
+              img={House}
               title="Hellou world"
               text="This card is just for testing and trying things"
             />
             <Karta
-              img={House3}
+              img={House}
               title="Hellou world"
               text="This card is just for testing and trying things"
             />
@@ -140,7 +144,7 @@ const Hlavni = () => {
                 initial="hidden"
                 whileInView="visible"
                 variants={Variants}
-                className="display-5 m-5"
+                className="display-5 m-5 orbitron-mggay"
                 id="prodej"
               >
                 Chcete prodat svou
@@ -237,6 +241,7 @@ const Hlavni = () => {
                 initial="hidden"
                 whileInView="visible"
                 variants={Variants}
+                className="orbitron-mggay"
               >
                 Prodej
               </motion.h2>
@@ -244,6 +249,7 @@ const Hlavni = () => {
                 initial="hidden"
                 whileInView="visible"
                 variants={Variants}
+                className="orbitron-mggay"
               >
                 Bydlení
               </motion.h2>
@@ -251,6 +257,7 @@ const Hlavni = () => {
                 initial="hidden"
                 whileInView="visible"
                 variants={Variants}
+                className="orbitron-mggay"
               >
                 Nemovitosti
               </motion.h2>
@@ -328,7 +335,7 @@ const Hlavni = () => {
             </div>
             <div className="col-sm-5">
               <motion.h2
-                className="display-5 m-5"
+                className="display-5 m-5 orbitron-mggay"
                 initial="hidden"
                 whileInView="visible"
                 variants={Variants}
@@ -350,14 +357,15 @@ const Hlavni = () => {
                 </ul>
               </motion.div>
 
-              <motion.button
+              <motion.a
                 initial="hidden"
                 whileInView="visible"
                 variants={Variants}
                 className="button-86 m-5"
+                href="/investing"
               >
                 Začít Investovat
-              </motion.button>
+              </motion.a>
             </div>
           </div>
         </div>

@@ -49,7 +49,7 @@ function investing(props) {
                 whileInView="visible"
                 variants={Variants}
               >
-                <h2 style={{ fontSize: "45px" }}>{props.title}</h2>
+                {props.title}
               </motion.h2>
               <motion.div
                 initial="hidden"
@@ -57,7 +57,7 @@ function investing(props) {
                 variants={Variants}
                 className="p-2 m-5"
               >
-                <ul style={{ fontSize: "25px" }}>
+                <ul>
                   <li>
                     <strong>{props.s1}</strong>
                     {props.s1text}

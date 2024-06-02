@@ -5,32 +5,13 @@ import Investing from "../Conponenty/investing";
 import rekon from "../Conponenty/images/rekonstrukce.jpg";
 import koupe from "../Conponenty/images/koupe.jpg";
 import invest from "../Conponenty/images/investReal.jpg";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "../Conponenty/App.css";
+import Quick from "../Conponenty/quick.js";
 
 const investingPage = () => {
   return (
     <>
-      <Navbar />
-      <div className="container-fluid">
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{ borderBottom: "4px solid black" }}
-        >
-          <div className="row text-center">
-            <h1 className="display-1 m-5">Investování do nemovitostí</h1>
-            <p>
-              <a
-                className="text-center button-84 m-5"
-                href="mailto:nevim@example.com"
-              >
-                Objednejte si konzultaci zdarma! 📞
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <Navbar title="Vitejte v Investovani" />
+      <Quick />
       <Investing
         img={invest}
         title="Výhody investování do nemovitostí"
@@ -61,27 +42,7 @@ const investingPage = () => {
         s3="Tržní cena"
         s3text=": Srovnání ceny nemovitosti s podobnými byty v okolí vám poskytne přehled o potenciální návratnosti investice."
       />
-      <div className="container-fluid">
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{
-            borderBottom: "4px solid black",
-            borderTop: "4px solid black",
-          }}
-        >
-          <div className="row text-center">
-            <h1 className="display-4 m-5">Co tahle tomu dát šanci</h1>
-            <p>
-              <a
-                className="text-center button-84 m-2"
-                href="mailto:nevim@example.com"
-              >
-                Objednejte si konzultaci 📞
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <Quick />
       <Footer />
     </>
   );

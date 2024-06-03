@@ -5,7 +5,6 @@ import ProdejPage from "../Conponenty/prodej";
 import { createClient } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import LoginPage from "../Conponenty/loginPage";
 import NotLoggedIn from "../Conponenty/notLoggedIn";
 
 const supabase = createClient(
@@ -14,48 +13,58 @@ const supabase = createClient(
 );
 
 function Prodej() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     async function getUserData() {
-      await supabase.auth.getUser().then((value) => {
-        //value.data.user
-        if (value.data?.user) {
-          console.log(value.data.user);
-          console.log(user);
-          setUser(value.data.user);
-        }
-      });
+      const { data, error } = await supabase.auth.getUser();
+      if (error) {
+        console.error("Error fetching user data:", error);
+        return;
+      }
+      if (data?.user) {
+        console.log("User data fetched:", data.user);
+        setUser(data.user);
+      }
     }
     getUserData();
-  }, [user]);
+  }, []);
 
   return (
     <div>
-      {Object.keys(user).length !== 0 ? (
-        <>
-          <div className="App">
-            <Navbar
-              titel="Určování cen nemovitostí"
-              text="Náš zaměstnanec si prohlédne vaši nemovitost a poté určí cenu"
-            />
-            <ProdejPage />
-            <Footer />
-          </div>
-        </>
+      {user ? (
+        <div className="App">
+          <Navbar
+            titel="Určování cen nemovitostí"
+            text="Náš zaměstnanec si prohlédne vaši nemovitost a poté určí cenu"
+          />
+          <ProdejPage />
+          <Footer />
+        </div>
       ) : (
         <>
-          <Navbar
-            title="Prosím přihlaste se,"
-            text="aby jste mohli pokračovat tak musíte být přihlášeni"
-          />
-          <NotLoggedIn />
-          <LoginPage />
+          <Navbar title="Prosím přihlaste se, aby jste mohl/a pokračovat" />
+
+          <div className="container">
+            <div className="row d-flex justify-content-center align-items-center  ">
+              <NotLoggedIn />
+              <button
+                className="m-5 button-84"
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Přejít na přihlášení
+              </button>
+            </div>
+          </div>
+
           <Footer />
         </>
       )}
     </div>
   );
 }
+
 export default Prodej;

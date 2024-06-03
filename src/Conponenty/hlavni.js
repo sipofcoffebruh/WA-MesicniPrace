@@ -5,10 +5,11 @@ import "aos/dist/aos.css";
 import "glightbox/dist/css/glightbox.min.css";
 import { Application } from "@splinetool/runtime";
 import "./App.css";
-import House from "../Conponenty/images/selling.jpg";
 import Invest2 from "../Conponenty/images/Investing2.jpg";
 import { motion } from "framer-motion";
 import House3 from "../Conponenty/images/house3.png";
+import house from "../Conponenty/images/Selling2.jpg";
+import House2 from "../Conponenty/images/Selling3.jpg";
 
 import Karta from "./card.js";
 
@@ -62,19 +63,30 @@ const Hlavni = () => {
             </h2>
 
             <Karta
-              img={House}
-              title="Hellou world"
-              text="This card is just for testing and trying things"
+              img={Invest2}
+              title="Investování"
+              text="Dlouhodobé investování do akcií může přinést vyšší výnosy než spořící účty.
+              Riziko a návratnost jsou klíčovými faktory, které je třeba zvážit při každém investičním rozhodnutí.
+             "
+              href="#investing"
+              info="Začít Investovat"
             />
             <Karta
-              img={House}
-              title="Hellou world"
-              text="This card is just for testing and trying things"
+              img={house}
+              title="Prodej nemovitosti"
+              text="Správné rozmístění nábytku může maximálně využít prostor a zlepšit komfort bydlení.
+              Moderní bydlení často klade důraz na ekologické a energeticky úsporné technologie.
+              "
+              href="#prodej"
+              info="Začít Prodej"
             />
             <Karta
-              img={House}
-              title="Hellou world"
-              text="This card is just for testing and trying things"
+              img={House2}
+              title="Najít Makléře"
+              text="Profesionální fotografie a virtuální prohlídky mohou výrazně zvýšit zájem kupujících o vaši nemovitost.
+              Výběr správného realitního makléře je klíčový pro úspěšný a rychlý prodej nemovitosti."
+              href="#model"
+              info="Najít makléře"
             />
           </div>
 
@@ -91,7 +103,11 @@ const Hlavni = () => {
 
       {/* Prodej Section */}
       <section>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          id="prodej"
+        >
           <path
             fill="#C7CEDB"
             id="Prodej"
@@ -110,7 +126,6 @@ const Hlavni = () => {
                 whileInView="visible"
                 variants={Variants}
                 className="display-5 m-5 orbitron-mggay"
-                id="prodej"
               >
                 Chcete prodat svou
                 <br />
@@ -170,6 +185,7 @@ const Hlavni = () => {
                   height: "auto",
                   paddingTop: "20px",
                   paddingBottom: "20px",
+                  maxHeight: "600px",
                 }}
               />
             </div>
@@ -195,7 +211,7 @@ const Hlavni = () => {
           className="container-fluid  bg-opacity-25 d-flex align-items-center text-white"
           style={{ backgroundColor: "#7E9181" }}
         >
-          <div className="row w-100">
+          <div className="row w-100" id="model">
             <div className="col-sm-1"></div>
             <div
               className="col-sm-5 pt-5 d-flex flex-column justify-content-center"
@@ -288,7 +304,7 @@ const Hlavni = () => {
           className="container-fluid text-white"
           style={{ backgroundColor: "#2E3532" }}
         >
-          <div className="row">
+          <div className="row" id="investing">
             <div className="col-sm-1"></div>
             <div className="col-sm-6 d-flex align-items-center justify-content-center">
               <img

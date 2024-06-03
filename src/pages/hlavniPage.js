@@ -7,8 +7,8 @@ function HlavniPage() {
   return (
     <div>
       <Navbar
-        title="Skibidi Realitky: cesta k brainrottu"
-        text="zab se more dik"
+        title="Realitní Senza: cesta k lepšímu bydlení       "
+        text="vše co potřebujete pro váš nový domov"
       />
       <Hlavni />
       <Footer />

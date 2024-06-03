@@ -5,6 +5,8 @@ import ProdejPage from "../Conponenty/prodej";
 import { createClient } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import LoginPage from "../Conponenty/loginPage";
+import NotLoggedIn from "../Conponenty/notLoggedIn";
 
 const supabase = createClient(
   "https://imhpbtahieylppvxmkul.supabase.co",
@@ -34,21 +36,23 @@ function Prodej() {
       {Object.keys(user).length !== 0 ? (
         <>
           <div className="App">
-            <Navbar />
+            <Navbar
+              titel="Určování cen nemovitostí"
+              text="Náš zaměstnanec si prohlédne vaši nemovitost a poté určí cenu"
+            />
             <ProdejPage />
             <Footer />
           </div>
         </>
       ) : (
         <>
-          <h1>User is not Logged</h1>
-          <button
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Go back to Sign In
-          </button>
+          <Navbar
+            title="Prosím přihlaste se,"
+            text="aby jste mohli pokračovat tak musíte být přihlášeni"
+          />
+          <NotLoggedIn />
+          <LoginPage />
+          <Footer />
         </>
       )}
     </div>

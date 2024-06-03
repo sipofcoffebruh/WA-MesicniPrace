@@ -18,15 +18,23 @@ function Karta(props) {
   return (
     <motion.div
       className="card p-1 m-5"
-      style={{ maxHeight: "500px", maxWidth: "400px" }}
+      style={{ maxHeight: "800px", maxWidth: "400px" }}
       initial="hidden"
       whileInView="visible"
       variants={Variants}
     >
-      <img src={props.img} className="card-img-top" alt="karta" />
+      <img
+        src={props.img}
+        className="card-img-top img-fluid "
+        alt="karta"
+        style={{ width: "100%", height: "300px" }}
+      />
       <div className="card-body">
         <h2 className="card-title mt-5">{props.title}</h2>
         <p className="card-text mt-5">{props.text}</p>
+        <a className="button-86 m-5" href={props.href}>
+          {props.info}
+        </a>
       </div>
     </motion.div>
   );

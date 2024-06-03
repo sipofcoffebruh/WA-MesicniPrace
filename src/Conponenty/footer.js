@@ -25,12 +25,12 @@ const Footer = () => {
             <ul className="nav justify-content-center border-bottom pt-3 mt-3">
               <li className="nav-item ">
                 <a href="/" className="nav-link px-2 text-white">
-                  Home
+                  Domů
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#test" className="nav-link px-2 text-white">
-                  Information
+                <a href="/investing" className="nav-link px-2 text-white">
+                  Investovaní
                 </a>
               </li>
               <li className="nav-item">
@@ -39,8 +39,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#test" className="nav-link px-2 text-white">
-                  About
+                <a href="/prodej" className="nav-link px-2 text-white">
+                  Prodej
                 </a>
               </li>
             </ul>

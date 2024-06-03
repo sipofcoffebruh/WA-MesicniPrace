@@ -44,7 +44,7 @@ function Developers(props) {
                     whileInView="visible"
                     variants={Variants}
                   >
-                    <h2 style={{ fontSize: "25px" }}>{props.title}</h2>
+                    <span style={{ fontSize: "25px" }}>{props.title}</span>
                   </motion.h2>
                   <p className="card-text p-4" style={{ fontSize: "18px" }}>
                     {props.text}

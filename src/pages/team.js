@@ -10,7 +10,7 @@ function Team() {
   return (
     <>
       <div className="App">
-        <Navbar />
+        <Navbar title="Zde si můžete prohlídnout naše pracovníky" text="" />
         <Developers
           img={nuggi}
           title="Meloun Nigien"

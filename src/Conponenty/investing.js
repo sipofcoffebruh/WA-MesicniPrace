@@ -28,20 +28,7 @@ function investing(props) {
         >
           <div className="row">
             <div className="col-sm-1"></div>
-            <div className="col-sm-6 d-flex align-items-center justify-content-center">
-              <img
-                src={props.img}
-                alt="InvestingImage"
-                style={{
-                  width: "80%",
-                  height: "auto",
-                  paddingTop: "20px",
-                  maxHeight: "600px",
-                  maxWidth: "800px",
-                }}
-                className="rounded-5"
-              />
-            </div>
+
             <div className="col-sm-5">
               <motion.h2
                 className="display-5 m-5"
@@ -72,6 +59,20 @@ function investing(props) {
                   </li>
                 </ul>
               </motion.div>
+            </div>
+            <div className="col-sm-6 d-flex align-items-center justify-content-center">
+              <img
+                src={props.img}
+                alt="InvestingImage"
+                style={{
+                  width: "80%",
+                  height: "auto",
+                  paddingTop: "20px",
+                  maxHeight: "600px",
+                  maxWidth: "800px",
+                }}
+                className="rounded-5"
+              />
             </div>
           </div>
         </div>

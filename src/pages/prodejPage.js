@@ -36,8 +36,8 @@ function Prodej() {
       {user ? (
         <div className="App">
           <Navbar
-            titel="Určování cen nemovitostí"
-            text="Náš zaměstnanec si prohlédne vaši nemovitost a poté určí cenu"
+            title="Prodejte svou nemovitost s námi"
+            text="Náš zaměstnanec si prohlédne vaši nemovitost a poté vytvoří nabídku, která bude zveřejněna na našem webu."
           />
           <ProdejPage />
           <Footer />

@@ -265,7 +265,7 @@ const Hlavni = () => {
                 className="mb-1"
               >
                 <span className="h5">Profesionální přístup k realitám.</span>
-                <br /> Nabízíme kvalitní služby pro vaše bydlení i podnikání.
+                <br /> Zavolejte nám +420 123 456 789
               </motion.p>
             </div>
             <div

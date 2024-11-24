@@ -1,29 +1,40 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "aos/dist/aos.css";
+import React, { useEffect } from "react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 
 const supabase = createClient(
-  "https://imhpbtahieylppvxmkul.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltaHBidGFoaWV5bHBwdnhta3VsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzAyMTYsImV4cCI6MjAzMDMwNjIxNn0.pkiubXD_EW39TgtK0Luaje1re352g2I_X1Xfb42w4KI"
+  "https://bviuhriolcuvayzbgzum.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ2aXVocmlvbGN1dmF5emJnenVtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1MDgyOTksImV4cCI6MjA0NTA4NDI5OX0.A5c9eHjNu37OaCt9DTCr-aKFHvyG8z1X_dHLpxl7aRc"
 );
 
-function LoginPage() {
-  supabase.auth.onAuthStateChange(async (event) => {
-    if (event === "SIGNED_IN") {
-      // forwart to success url
+const LoginPage2 = () => {
+  useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN") {
+        window.location.href = "/";
+      }
+    });
 
-      window.location.href = "/";
-    } else {
-    }
-  });
+    // Cleanup on unmount
+    return () => {
+      authListener?.unsubscribe();
+    };
+  }, []);
 
   return (
-    <section>
+    <section
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#f8f9fa",
+      }}
+    >
       <div
-        className="container mt-5  bg-white bg-opacity-25 rounded-4"
+        className="container p-4 bg-white bg-opacity-25 rounded-4"
+        style={{ maxWidth: "400px" }}
         id="Prihlasit"
       >
         <Auth
@@ -35,6 +46,6 @@ function LoginPage() {
       </div>
     </section>
   );
-}
+};
 
-export default LoginPage;
+export default LoginPage2;
